@@ -1,9 +1,7 @@
 package io.github.mxkooo.flashcardapp.flashcards;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import io.github.mxkooo.flashcardapp.flashcards.groups.FlashcardGroup;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -21,4 +19,7 @@ public class Flashcard {
 
     private String backSide;
 
+    @ManyToOne
+    @JoinColumn(name = "flashcard_group_id")
+    private FlashcardGroup flashcardGroup;
 }
