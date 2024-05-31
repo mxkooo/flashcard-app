@@ -13,5 +13,13 @@
             <column name="BACKSIDE" type="VARCHAR(250)"/>
         </createTable>
 
+        <createTable tableName="FLASHCARD_GROUP">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="GROUPNAME" type="VARCHAR(250)"/>
+            <column name="GROUPDESCRIPTION" type="VARCHAR(250)"/>
+        </createTable>
+
     </changeSet>
 </databaseChangeLog>
