@@ -7,5 +7,6 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class FlashcardGroupServiceImpl {
+public class FlashcardGroupServiceImpl implements FlashcardGroupService{
+
 }
