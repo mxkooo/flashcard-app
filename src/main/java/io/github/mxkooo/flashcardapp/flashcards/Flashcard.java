@@ -1,5 +1,7 @@
 package io.github.mxkooo.flashcardapp.flashcards;
 
+import io.github.mxkooo.flashcardapp.flashcards.groups.FlashcardGroup;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,4 +21,7 @@ public class Flashcard {
 
     private String backSide;
 
+    @ManyToOne
+    @JoinColumn(name = "flashcard_group_id")
+    private FlashcardGroup flashcardGroup;
 }
