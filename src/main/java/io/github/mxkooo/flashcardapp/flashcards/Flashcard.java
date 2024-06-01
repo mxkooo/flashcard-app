@@ -1,9 +1,11 @@
 package io.github.mxkooo.flashcardapp.flashcards;
 
 import io.github.mxkooo.flashcardapp.flashcards.groups.FlashcardGroup;
+
 import jakarta.persistence.*;
 import lombok.*;
 
+@Table(name = "FLASHCARD")
 @Entity
 @NoArgsConstructor
 @Builder
