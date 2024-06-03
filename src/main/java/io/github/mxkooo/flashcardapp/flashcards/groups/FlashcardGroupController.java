@@ -1,6 +1,5 @@
 package io.github.mxkooo.flashcardapp.flashcards.groups;
 
-import io.github.mxkooo.flashcardapp.flashcards.dto.CreateFlashcardDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +15,8 @@ public class FlashcardGroupController {
         return flashcardGroupService.createFlashcardGroup(dto);
     }
     @PostMapping(RoutesFlashcardGroup.POST + "/{groupId}")
-    public FlashcardGroup addItemToGroup(@PathVariable long groupId, @RequestBody @Validated CreateFlashcardDTO dto){
-        return flashcardGroupService.addFlashcardToGroup(groupId, dto);
+    public FlashcardGroup addItemToGroup(@PathVariable long groupId, @PathVariable long flashcardId){
+        return flashcardGroupService.addFlashcardToGroup(groupId, flashcardId);
     }
 
 }

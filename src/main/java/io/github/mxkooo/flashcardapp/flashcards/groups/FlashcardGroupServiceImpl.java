@@ -1,7 +1,8 @@
 package io.github.mxkooo.flashcardapp.flashcards.groups;
 
+import io.github.mxkooo.flashcardapp.flashcards.Flashcard;
 import io.github.mxkooo.flashcardapp.flashcards.FlashcardMapper;
-import io.github.mxkooo.flashcardapp.flashcards.dto.CreateFlashcardDTO;
+import io.github.mxkooo.flashcardapp.flashcards.FlashcardRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class FlashcardGroupServiceImpl implements FlashcardGroupService{
     private FlashcardGroupRepository flashcardGroupRepository;
+    private FlashcardRepository flashcardRepository;
 
     public FlashcardGroup createFlashcardGroup(FlashcardGroupDTO dto) {
 
@@ -21,10 +23,13 @@ public class FlashcardGroupServiceImpl implements FlashcardGroupService{
         );
     }
 
-    public FlashcardGroup addFlashcardToGroup(long groupId, CreateFlashcardDTO dto){
+    public FlashcardGroup addFlashcardToGroup(long groupId, long flashcardId){
         FlashcardGroup group = flashcardGroupRepository.findById(groupId)
                 .orElseThrow();
-        group.getFlashcards().add(FlashcardMapper.mapToEntity(dto));
+        Flashcard flashcard = flashcardRepository.findById(flashcardId)
+                        .orElseThrow();
+
+        group.getFlashcards().add(flashcard);
         return group;
     }
 }
