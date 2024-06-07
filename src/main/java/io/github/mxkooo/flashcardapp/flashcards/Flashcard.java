@@ -2,9 +2,12 @@ package io.github.mxkooo.flashcardapp.flashcards;
 
 import io.github.mxkooo.flashcardapp.flashcards.groups.FlashcardGroup;
 import io.github.mxkooo.flashcardapp.user.User;
+
+
 import jakarta.persistence.*;
 import lombok.*;
 
+@Table(name = "FLASHCARD")
 @Entity
 @NoArgsConstructor
 @Builder
