@@ -21,5 +21,11 @@
             <column name="GROUPDESCRIPTION" type="VARCHAR(250)"/>
         </createTable>
 
+        <createTable tableName="USER">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="NICKNAME" type="VARCHAR(250)"/>
+        </createTable>
     </changeSet>
 </databaseChangeLog>
