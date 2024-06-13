@@ -24,8 +24,8 @@ public class Flashcard {
     private String backSide;
 
     @ManyToOne
-    @JoinColumn(name = "flashcard_group_id")
-    private FlashcardGroup flashcardGroup;
+    @JoinColumn(name = "group_id")
+    private FlashcardGroup group;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
